@@ -3,9 +3,53 @@ import { BackgroundBeams } from "../ui/background-beams";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
- import { motion } from "framer-motion";
+import { motion } from "framer-motion";
 import { Mail, Phone, MapPin } from "lucide-react";
 import { Textarea } from "../ui/textarea";
+
+const contactData = {
+  heading: "Let's Work Together",
+  subheading: "Ready to bring your vision to life? We'd love to hear from you.",
+  form: {
+    title: "Send us a message",
+    fields: [
+      { id: "firstName", label: "First Name", type: "input" },
+      { id: "lastName", label: "Last Name", type: "input" },
+      { id: "email", label: "Email", type: "email" },
+      { id: "message", label: "Message", type: "textarea" },
+    ],
+    buttonText: "Send Message",
+  },
+  contactInfo: {
+    title: "Get in touch",
+    items: [
+      {
+        icon: <Mail className="h-6 w-6 text-white" />,
+        title: "Email",
+        value: "hello@abccompany.com",
+      },
+      {
+        icon: <Phone className="h-6 w-6 text-white" />,
+        title: "Phone",
+        value: "+1 (555) 123-4567",
+      },
+      {
+        icon: <MapPin className="h-6 w-6 text-white" />,
+        title: "Office",
+        value: "123 Design Street\nCreative District, NY 10001",
+      },
+    ],
+  },
+  whyChooseUs: {
+    title: "Why choose us?",
+    benefits: [
+      "Clean, thoughtful design approach",
+      "Modern technology solutions",
+      "Dedicated support team",
+      "Transparent communication",
+    ],
+  },
+};
 
 export function Contact() {
   return (
@@ -14,10 +58,10 @@ export function Contact() {
       <div className="max-w-6xl mx-auto px-4 relative z-10">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 mb-8">
-            Let's Work Together
+            {contactData.heading}
           </h2>
           <p className="text-xl text-neutral-400 max-w-3xl mx-auto">
-            Ready to bring your vision to life? We'd love to hear from you.
+            {contactData.subheading}
           </p>
         </div>
 
@@ -30,13 +74,13 @@ export function Contact() {
           >
             <div className="bg-neutral-900/50 backdrop-blur-sm border border-neutral-800 rounded-2xl p-8">
               <h3 className="text-2xl font-bold text-white mb-8">
-                Send us a message
+                {contactData.form.title}
               </h3>
               <form className="space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div className="space-y-2">
                     <Label htmlFor="firstName" className="text-neutral-300">
-                      First Name
+                      {contactData.form.fields[0].label}
                     </Label>
                     <Input
                       id="firstName"
@@ -45,7 +89,7 @@ export function Contact() {
                   </div>
                   <div className="space-y-2">
                     <Label htmlFor="lastName" className="text-neutral-300">
-                      Last Name
+                      {contactData.form.fields[1].label}
                     </Label>
                     <Input
                       id="lastName"
@@ -55,7 +99,7 @@ export function Contact() {
                 </div>
                 <div className="space-y-2">
                   <Label htmlFor="email" className="text-neutral-300">
-                    Email
+                    {contactData.form.fields[2].label}
                   </Label>
                   <Input
                     id="email"
@@ -65,7 +109,7 @@ export function Contact() {
                 </div>
                 <div className="space-y-2">
                   <Label htmlFor="message" className="text-neutral-300">
-                    Message
+                    {contactData.form.fields[3].label}
                   </Label>
                   <Textarea
                     id="message"
@@ -73,7 +117,7 @@ export function Contact() {
                   />
                 </div>
                 <Button className="w-full bg-teal-600 hover:bg-teal-700 text-white py-3 font-medium">
-                  Send Message
+                  {contactData.form.buttonText}
                 </Button>
               </form>
             </div>
@@ -88,64 +132,47 @@ export function Contact() {
           >
             <div>
               <h3 className="text-2xl font-bold text-white mb-8">
-                Get in touch
+                {contactData.contactInfo.title}
               </h3>
               <div className="space-y-6">
-                <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 bg-teal-600 rounded-xl flex items-center justify-center flex-shrink-0">
-                    <Mail className="h-6 w-6 text-white" />
-                  </div>
-                  <div>
-                    <div className="font-bold text-white mb-1">Email</div>
-                    <div className="text-neutral-400">hello@abccompany.com</div>
-                  </div>
-                </div>
-
-                <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 bg-teal-600 rounded-xl flex items-center justify-center flex-shrink-0">
-                    <Phone className="h-6 w-6 text-white" />
-                  </div>
-                  <div>
-                    <div className="font-bold text-white mb-1">Phone</div>
-                    <div className="text-neutral-400">+1 (555) 123-4567</div>
-                  </div>
-                </div>
-
-                <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 bg-teal-600 rounded-xl flex items-center justify-center flex-shrink-0">
-                    <MapPin className="h-6 w-6 text-white" />
-                  </div>
-                  <div>
-                    <div className="font-bold text-white mb-1">Office</div>
-                    <div className="text-neutral-400">
-                      123 Design Street
-                      <br />
-                      Creative District, NY 10001
+                {contactData.contactInfo.items.map((item, index) => (
+                  <div key={index} className="flex items-start space-x-4">
+                    <div className="w-12 h-12 bg-teal-600 rounded-xl flex items-center justify-center flex-shrink-0">
+                      {item.icon}
+                    </div>
+                    <div>
+                      <div className="font-bold text-white mb-1">
+                        {item.title}
+                      </div>
+                      <div className="text-neutral-400">
+                        {item.value.includes("\n")
+                          ? item.value.split("\n").map((line, i) => (
+                              <div key={i}>
+                                {line}
+                                {i < item.value.split("\n").length - 1 && (
+                                  <br />
+                                )}
+                              </div>
+                            ))
+                          : item.value}
+                      </div>
                     </div>
                   </div>
-                </div>
+                ))}
               </div>
             </div>
 
             <div className="bg-teal-600/10 border border-teal-600/20 rounded-2xl p-8">
-              <h4 className="font-bold text-white mb-4">Why choose us?</h4>
+              <h4 className="font-bold text-white mb-4">
+                {contactData.whyChooseUs.title}
+              </h4>
               <ul className="space-y-3 text-neutral-300">
-                <li className="flex items-center">
-                  <div className="w-2 h-2 bg-teal-400 rounded-full mr-3"></div>
-                  Clean, thoughtful design approach
-                </li>
-                <li className="flex items-center">
-                  <div className="w-2 h-2 bg-teal-400 rounded-full mr-3"></div>
-                  Modern technology solutions
-                </li>
-                <li className="flex items-center">
-                  <div className="w-2 h-2 bg-teal-400 rounded-full mr-3"></div>
-                  Dedicated support team
-                </li>
-                <li className="flex items-center">
-                  <div className="w-2 h-2 bg-teal-400 rounded-full mr-3"></div>
-                  Transparent communication
-                </li>
+                {contactData.whyChooseUs.benefits.map((benefit, index) => (
+                  <li key={index} className="flex items-center">
+                    <div className="w-2 h-2 bg-teal-400 rounded-full mr-3"></div>
+                    {benefit}
+                  </li>
+                ))}
               </ul>
             </div>
           </motion.div>

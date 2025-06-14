@@ -1,4 +1,3 @@
- 
 import { About } from "@/components/homePage/about";
 import { Contact } from "@/components/homePage/contact";
 import { Footer } from "@/components/homePage/footer";
@@ -30,7 +29,7 @@ const navItems = [
 
 export default function Page() {
   return (
-    <main className="relative bg-black">
+    <main className="relative bg-background">
       <FloatingNav navItems={navItems} />
       <Hero />
       <TracingBeam className="px-6">

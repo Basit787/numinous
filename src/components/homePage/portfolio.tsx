@@ -41,7 +41,7 @@ export function Portfolio() {
             Selected Work
           </h2>
           <p className="text-xl text-neutral-400 max-w-3xl mx-auto">
-            A showcase of projects we're proud to have been part of.
+            A showcase of projects we&apos;re proud to have been part of.
           </p>
         </div>
 

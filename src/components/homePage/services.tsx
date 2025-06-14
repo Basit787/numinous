@@ -1,13 +1,5 @@
 "use client";
 import { HoverEffect } from "@/components/ui/card-hover-effect";
-import {
-  Code,
-  Palette,
-  Smartphone,
-  BarChart3,
-  Shield,
-  Headphones,
-} from "lucide-react";
 
 export function Services() {
   const services = [
