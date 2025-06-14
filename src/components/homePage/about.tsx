@@ -2,8 +2,9 @@
 import { motion } from "framer-motion";
 import { TextGenerateEffect } from "../ui/text-generate-effect";
 import { aboutData } from "@/data/about";
+import Image from "next/image";
 
-export function About() {
+const About = () => {
   return (
     <section id="about" className="py-24 bg-[var(--black)] text-[var(--white)]">
       <div className="max-w-6xl mx-auto px-4">
@@ -19,7 +20,7 @@ export function About() {
           </h2>
           <TextGenerateEffect
             words="We believe in the power of simplicity, the beauty of clean design, and the impact of meaningful digital experiences."
-            className="text-center max-w-3xl mx-auto text-lg text-white"
+            className="text-center md:text-lg text-base text-white"
           />
         </motion.div>
 
@@ -54,9 +55,14 @@ export function About() {
               key={item.title}
             >
               <div
-                className={`w-16 h-16 bg-[${item.bg}] rounded-full mx-auto mb-6 flex items-center justify-center`}
+                className={`w-20 h-20 mx-auto mb-6 flex items-center justify-center`}
               >
-                <div className="w-8 h-8 bg-[var(--white)] rounded-full"></div>
+                <Image
+                  src={item.img}
+                  alt={item.img}
+                  height={1000}
+                  width={1000}
+                />
               </div>
               <h3 className="text-2xl font-bold mb-4">{item.title}</h3>
               <p className="text-[var(--neutral-400)]">{item.description}</p>
@@ -66,4 +72,6 @@ export function About() {
       </div>
     </section>
   );
-}
+};
+
+export default About;

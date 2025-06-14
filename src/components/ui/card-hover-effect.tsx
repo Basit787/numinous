@@ -1,5 +1,6 @@
 import { cn } from "@/lib/utils";
 import { AnimatePresence, motion } from "motion/react";
+import Image from "next/image";
 
 import { useState } from "react";
 
@@ -10,7 +11,7 @@ export const HoverEffect = ({
   items: {
     title: string;
     description: string;
-    link: string;
+    bgImg: string;
   }[];
   className?: string;
 }) => {
@@ -24,8 +25,7 @@ export const HoverEffect = ({
       )}
     >
       {items.map((item, idx) => (
-        <a
-          href={item?.link}
+        <div
           key={idx}
           className="relative group  block p-2 h-full w-full"
           onMouseEnter={() => setHoveredIndex(idx)}
@@ -49,10 +49,21 @@ export const HoverEffect = ({
             )}
           </AnimatePresence>
           <Card>
-            <CardTitle>{item.title}</CardTitle>
-            <CardDescription>{item.description}</CardDescription>
+            <div className="flex justify-between items-center">
+              <CardTitle>{item.title}</CardTitle>
+              <Image
+                src={item.bgImg}
+                alt={item.bgImg}
+                height={1000}
+                width={1000}
+                className="h-20 w-20"
+              />
+            </div>
+            <CardDescription className="text-justify">
+              {item.description}
+            </CardDescription>
           </Card>
-        </a>
+        </div>
       ))}
     </div>
   );
@@ -68,7 +79,7 @@ export const Card = ({
   return (
     <div
       className={cn(
-        "rounded-2xl h-full w-full p-4 overflow-hidden bg-black border border-transparent dark:border-white/[0.2] group-hover:border-slate-700 relative z-20",
+        `rounded-2xl h-full w-full p-4 overflow-hidden border border-primary dark:border-white/[0.2] group-hover:border-slate-700 relative z-20`,
         className
       )}
     >
@@ -86,7 +97,7 @@ export const CardTitle = ({
   children: React.ReactNode;
 }) => {
   return (
-    <h4 className={cn("text-zinc-100 font-bold tracking-wide mt-4", className)}>
+    <h4 className={cn("text-teal-600 font-bold tracking-wide mt-4", className)}>
       {children}
     </h4>
   );

@@ -5,7 +5,7 @@ import { TextGenerateEffect } from "@/components/ui/text-generate-effect";
 import { heroData } from "@/data/hero";
 import { motion } from "framer-motion";
 
-export function Hero() {
+const Hero = () => {
   return (
     <div
       id="home"
@@ -61,4 +61,6 @@ export function Hero() {
       </div>
     </div>
   );
-}
+};
+
+export default Hero;

@@ -11,17 +11,17 @@ export const aboutData = {
       title: "Design",
       description:
         " Clean, intuitive interfaces that users love to interact with",
-      bg: "var(--teal-600)",
+      img: "about/design.svg",
     },
     {
       title: "Develop",
       description: "Robust, scalable solutions built with modern technologies",
-      bg: "var(--purple-600)",
+      img: "about/develop.svg",
     },
     {
       title: "Deliver",
       description: "Exceptional results that exceed expectations every time",
-      bg: "var(--pink-600)",
+      img: "about/deliver.svg",
     },
   ],
 };

@@ -51,7 +51,7 @@ const contactData = {
   },
 };
 
-export function Contact() {
+const Contact = () => {
   return (
     <section id="contact" className="py-24 bg-black relative">
       <BackgroundBeams />
@@ -180,4 +180,6 @@ export function Contact() {
       </div>
     </section>
   );
-}
+};
+
+export default Contact;
