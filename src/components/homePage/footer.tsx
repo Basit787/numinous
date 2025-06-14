@@ -21,25 +21,28 @@ const Footer = () => {
             <p className="text-[var(--neutral-400)] leading-relaxed max-w-md mb-6">
               {footerData.company.description}
             </p>
-            <div className="flex space-x-4">
+            <div className="flex justify-center md:justify-start items-center space-x-4">
               {footerData.company.socialLinks.map((link) => (
                 <a
                   key={link.id}
                   href={link.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="w-10 h-10 flex items-center justify-center transition-colors cursor-pointer"
                 >
                   <Image
                     src={link.img}
-                    alt={link.img}
-                    height={1000}
-                    width={1000}
+                    alt={`Icon for ${link.url}`}
+                    height={40}
+                    width={40}
+                    className="object-contain"
                   />
                 </a>
               ))}
             </div>
           </div>
 
-          <div className="flex sm:grid-cols-1 grid-cols-2 gap-20">
+          <div className="flex sm:grid-cols-1 grid-cols-2 gap-20 md:gap-40">
             <div>
               <h4 className="font-bold text-[var(--white)] mb-6">Services</h4>
               <ul className="space-y-3 text-[var(--neutral-400)]">
