@@ -1,7 +1,6 @@
 "use client";
-import { AnimatedTooltip } from "@/components/ui/animated-tooltip";
 import { people } from "@/data/team";
-import Image from "next/image";
+import { AnimatedTestimonials } from "../ui/animated-testimonials";
 
 const Team = () => {
   return (
@@ -16,39 +15,7 @@ const Team = () => {
           </p>
         </div>
 
-        <div className="flex flex-row items-center justify-center">
-          <AnimatedTooltip items={people} />
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-16">
-          {people.map((member, index) => (
-            <div key={index} className="text-center group h-full">
-              <div className="h-full flex flex-col justify-between bg-[var(--neutral-900)] border border-[var(--neutral-800)] rounded-2xl p-4 group-hover:border-[var(--teal-600)] transition-colors duration-300">
-                <div>
-                  <div className="flex justify-center items-center">
-                    <Image
-                      src={member.image}
-                      alt={member.image}
-                      height={1000}
-                      width={1000}
-                      className="h-24 w-24"
-                    />
-                  </div>
-
-                  <h3 className="text-xl font-bold text-[var(--white)] mb-2">
-                    {member.name}
-                  </h3>
-                  <div className="text-[var(--teal-400)] font-medium mb-4 ">
-                    {member.designation}
-                  </div>
-                </div>
-                <p className="text-[var(--neutral-400)] text-sm leading-relaxed text-justify mt-4">
-                  {member.description}
-                </p>
-              </div>
-            </div>
-          ))}
-        </div>
+        <AnimatedTestimonials testimonials={people} />
       </div>
     </section>
   );

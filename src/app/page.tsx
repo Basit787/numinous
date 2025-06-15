@@ -1,3 +1,4 @@
+import { BackgroundBeams } from "@/components/ui/background-beams";
 import { FloatingNav } from "@/components/ui/floating-navbar";
 import { TracingBeam } from "@/components/ui/tracing-beam";
 import { navItems } from "@/data/navItems";
@@ -16,14 +17,17 @@ export default function Page() {
     <main className="relative bg-background">
       <FloatingNav navItems={navItems} />
       <Hero />
-      <TracingBeam className="px-6 mb-20">
-        <About />
-        <Services />
-        <Portfolio />
-        <Team />
-        <Contact />
-      </TracingBeam>
+      <section>
+        <TracingBeam className="px-6 mb-20 relative">
+          <About />
+          <Services />
+          <Portfolio />
+          <Team />
+          <Contact />
+        </TracingBeam>
+      </section>
       <Footer />
+      <BackgroundBeams />
     </main>
   );
 }
