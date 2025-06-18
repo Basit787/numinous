@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 const Portfolio = () => {
   return (
-    <section id="portfolio" className="py-24 bg-[var(--black)]">
+    <section id="portfolio">
       <div className="max-w-6xl mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-b from-[var(--neutral-50)] to-[var(--neutral-400)] mb-8">

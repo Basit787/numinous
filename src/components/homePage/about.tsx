@@ -6,7 +6,7 @@ import Image from "next/image";
 
 const About = () => {
   return (
-    <section id="about" className="py-32 bg-[var(--black)] text-[var(--white)]">
+    <section id="about" className="text-[var(--white)] pt-20">
       <div className="max-w-6xl mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

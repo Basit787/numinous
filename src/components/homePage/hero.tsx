@@ -9,7 +9,7 @@ const Hero = () => {
   return (
     <div
       id="home"
-      className="h-screen relative w-full bg-[var(--black)] flex flex-col items-center justify-center overflow-hidden rounded-md"
+      className="h-screen relative w-full flex flex-col items-center justify-center overflow-hidden"
     >
       <div className="w-full absolute inset-0 h-screen">
         <SparklesCore

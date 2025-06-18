@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import Providers from "@/providers";
 
 export const metadata: Metadata = {
   title: "NUMINOUS",
@@ -40,7 +41,9 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body>
-        <main className="container mx-auto">{children}</main>
+        <main className="container mx-auto">
+          <Providers>{children}</Providers>
+        </main>
       </body>
     </html>
   );

@@ -41,7 +41,7 @@ export const AnimatedTestimonials = ({
   const randomRotateY = () => Math.floor(Math.random() * 21) - 10;
 
   return (
-    <div className="mx-auto max-w-5xl px-4 py-16 font-sans antialiased">
+    <div className="mx-auto max-w-5xl px-4 font-sans antialiased">
       <div className="relative grid grid-cols-1 gap-10 md:grid-cols-2 items-center">
         <div className="relative flex justify-center">
           <div className="relative h-64 w-64 sm:h-80 sm:w-80 md:h-96 md:w-96">

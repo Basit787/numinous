@@ -4,27 +4,20 @@ export const people = [
     designation: "Senior Backend Developer",
     src: "/team/person1.jpg",
     quote:
-      "Passionate about creating exceptional digital experiences through innovative design and development.",
+      "Experienced in turning complex requirements into efficient, high-performance applications across multiple platforms Driven by curiosity and innovation, with a commitment to clean code, scalability, and modern development practices.",
   },
   {
-    name: "Mohin Shaikh",
-    designation: "Senior Backend Developer",
+    name: "Saqlain Ansari",
+    designation: "Senior Full Stack Developer",
     src: "/team/person2.jpg",
     quote:
-      "Passionate about creating exceptional digital experiences through innovative design and development.",
+      "Skilled in delivering robust solutions that align with business goals and enhance user experience. Thrives in collaborative environments and embraces continuous learning to stay ahead in technology.",
   },
   {
-    name: "Mohin Shaikh",
-    designation: "Senior Backend Developer",
+    name: "Basit Saleem",
+    designation: "Full Stack Developer",
     src: "/team/person3.jpg",
     quote:
-      "Passionate about creating exceptional digital experiences through innovative design and development.",
-  },
-  {
-    name: "Mohin Shaikh",
-    designation: "Senior Backend Developer",
-    src: "/team/person4.jpg",
-    quote:
-      "Passionate about creating exceptional digital experiences through innovative design and development.",
+      "Experienced Full Stack Developer skilled in building scalable, user-friendly web and mobile applications using React, Node.js, and modern databases.",
   },
 ];
